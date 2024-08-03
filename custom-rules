@@ -1,0 +1,8 @@
+# - ip_cidr
+# - domain
+# - domain_suffix
+- domain_suffix browserleaks.com
+- domain_suffix browerleaks.com
++ domain_suffix custom.com
+# + domain_suffix custom1.com
++ domain_suffix custom2.com

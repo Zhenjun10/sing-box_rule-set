@@ -1,0 +1,9 @@
+#!bin/sh
+# generate sing-box rule-set srs file
+
+curl -Lo cnip https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/cn.json
+curl -Lo cnsite https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/cn.json
+python3 main.py
+sing-box rule-set compile geocn
+rm cnip cnsite
+
