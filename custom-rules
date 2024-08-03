@@ -1,6 +1,6 @@
-# - ip_cidr
-# - domain
-# - domain_suffix
+# - ip_cidr 1.1.1.1/24
+# - domain t.t
+# - domain_suffix t.t
 - domain_suffix browserleaks.com
 - domain_suffix browerleaks.com
 + domain_suffix custom.com
