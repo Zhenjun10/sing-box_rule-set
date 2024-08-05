@@ -1,0 +1,13 @@
+#!bin/sh
+# generate sing-box rule-set srs file
+
+curl -Lo direct-list https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt
+curl -Lo proxy-list https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt
+curl -Lo china-list https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/china-list.txt
+curl -Lo apple-cn https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/apple-cn.txt
+curl -Lo google-cn https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/google-cn.txt
+curl -Lo gfw https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt
+python3 RuleManual.py
+sing-box rule-set compile DirectRules
+sing-box rule-set compile ProxyRules
+
