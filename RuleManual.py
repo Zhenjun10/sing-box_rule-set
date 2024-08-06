@@ -113,6 +113,14 @@ class RuleManual:
                     self.proxy_rules["domain_regex"].append(line[1])
         self.log('DONE', f"Add {filename} to ProxyRules")
 
+    def add_sub_rules(self, filename: str):
+        with open(filename, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        for line in lines:
+            self.direct_rules["domain"].append(line.strip())
+        self.log('DONE', f"Add {filename} to DirectRules")
+
     def gen_rule_files(self):
         import json
         json.dump(self.DirectRules, open("DirectRules", "w+", encoding="utf-8"), indent=2)
@@ -138,7 +146,7 @@ if __name__ == "__main__":
     rm.add_proxy_rules("gfw")
     rm.add_custom_direct_rules("custom-DirectRules")
     rm.add_custom_proxy_rules("custom-ProxyRules")
+    rm.add_sub_rules("sub-list")
     rm.uniq_rule_files()
     rm.gen_rule_files()
-
 
